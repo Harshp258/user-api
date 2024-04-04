@@ -91,7 +91,7 @@ module.exports.getFavourites = function (id) {
     });
 }
 
-module.exports.addFavourite = function (id, favId) {
+module.exports.addToFavourite = function (id, favId) {
 
     return new Promise(function (resolve, reject) {
 
@@ -114,7 +114,7 @@ module.exports.addFavourite = function (id, favId) {
 
 }
 
-module.exports.removeFavourite = function (id, favId) {
+module.exports.removeFromFavourite = function (id, favId) {
     return new Promise(function (resolve, reject) {
         User.findByIdAndUpdate(id,
             { $pull: { favourites: favId } },
